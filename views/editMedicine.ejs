@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Medicine</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <!-- Include the navbar partial -->
+    <% include partials/navbar %>
+    <div class="container">
+        <h1>Edit Medicine</h1>
+
+        <!-- Display Error Message if Exists -->
+        <% if (error) { %>
+            <div class="error-message">
+                <p><%= error %></p>
+            </div>
+        <% } %>
+
+        <form action="/edit-medicine/<%= medicine._id %>" method="POST">
+            <div class="form-group">
+                <label for="name">Medicine Name</label>
+                <input type="text" id="name" name="name" value="<%= medicine.name %>" required />
+            </div>
+
+            <div class="form-group">
+                <label for="stock">Stock</label>
+                <input type="number" id="stock" name="stock" value="<%= medicine.stock %>" required />
+            </div>
+
+            <button type="submit">Update Medicine</button>
+        </form>
+    </div>
+</body>
+</html>

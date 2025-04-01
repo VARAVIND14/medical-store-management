@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <!-- Include the navbar partial -->
+    <% include partials/navbar %>
+
+    <div class="content">
+        <%- body %>  <!-- This is where the individual page content will be injected -->
+    </div>
+</body>
+</html>
